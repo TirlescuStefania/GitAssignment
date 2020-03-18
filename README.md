@@ -1,3 +1,3 @@
-# GitAssignment
+# Tirlescu Roxana Stefania
 
-## Tirlescu Roxana Stefania - gr 1084
+## grupa 1084
