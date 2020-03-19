@@ -1,6 +1,6 @@
 package ro.ase.csie.cts.g1084.tema2;
 
-public class Place {
+public class Place implements Priceable{
 	public int idPlace;
 	public String denumire;
 	public String categorie;
@@ -41,12 +41,22 @@ public class Place {
 	public void setPretIntrare(float pretIntrare) {
 		this.pretIntrare = pretIntrare;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "Place [idPlace=" + idPlace + ", denumire=" + denumire + 
 				", categorie=" + categorie + ", pretIntrare="
 				+ pretIntrare + "]";
+	}
+
+	@Override
+	public float getPretCuDiscount() {
+		float pretNou = 0;
+		if(this.categorie == Priceable.CATEGORIE_CU_PRET_REDUS) {
+			pretNou = this.pretIntrare - (this.pretIntrare*Priceable.DISCOUNT);
+		}
+		return pretNou;
 	}
 
 }
